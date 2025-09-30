@@ -1,0 +1,41 @@
+/* Smooth transitions for inputs and buttons */
+input, select, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Subtle shadow for input fields on focus */
+input:focus, select:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Tailwind blue-500 ring mimic */
+}
+
+/* Rounded corners consistency */
+input, select, button {
+  border-radius: 0.5rem; /* matches Tailwind's rounded class */
+}
+
+/* Button hover effect */
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Error message spacing */
+.text-red-500 {
+  margin-top: 0.25rem;
+}
+
+/* Success message spacing */
+.text-green-500 {
+  margin-top: 0.25rem;
+}
+
+/* Optional: card shadow */
+div.bg-white {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 640px) {
+  div.bg-white {
+    padding: 1.5rem; /* smaller padding on mobile */
+  }
+}

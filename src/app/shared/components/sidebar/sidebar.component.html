@@ -1,0 +1,14 @@
+<div class="bg-gray-800 text-white h-full w-64 flex flex-col p-4">
+  <button (click)="toggleSidebar()" class="mb-4 text-sm text-gray-300 hover:text-white">
+    {{ isExpanded ? 'Collapse' : 'Expand' }}
+  </button>
+
+  <ng-container *ngFor="let item of navItems">
+    <a [routerLink]="item.route"
+       class="flex items-center p-2 mb-2 rounded hover:bg-gray-700"
+       [ngClass]="{'bg-gray-900': isActive(item.route)}">
+      <lucide-icon [name]="item.icon" [ngClass]="{'mr-3': isExpanded, 'text-white': isActive(item.route)}"></lucide-icon>
+      <span *ngIf="isExpanded">{{ item.label }}</span>
+    </a>
+  </ng-container>
+</div>

@@ -1,0 +1,79 @@
+/* Custom animations for error messages */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Custom focus styles for better accessibility */
+input:focus {
+  outline: none;
+}
+
+/* Smooth transitions for disabled states */
+input:disabled,
+button:disabled {
+  cursor: not-allowed;
+  transition: all 0.2s ease;
+}
+
+/* Custom scrollbar for details element */
+details[open] > div {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects for interactive elements */
+button:not(:disabled):hover {
+  transition: all 0.2s ease;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Form validation styles */
+input.ng-invalid.ng-touched {
+  border-color: #ef4444;
+}
+
+input.ng-valid.ng-touched {
+  border-color: #10b981;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .rounded-2xl {
+    border-radius: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .bg-gradient-to-br,
+  .bg-gradient-to-r {
+    background: white !important;
+    color: black !important;
+  }
+}
